@@ -9,7 +9,7 @@ function createPlayer1 (name){
     const addScore = () => playerScore++;
     const resetScore = () => playerScore = 0;
     const addPlayerMove = (num) => playerMoves.push(num);
-
+return {playerName, playerMarker, resetMoves,getScore,addScore,resetScore,addPlayerMove}
 }
 
 function createPlayer2 (name){
@@ -23,5 +23,12 @@ function createPlayer2 (name){
     const addScore = () => playerScore++;
     const resetScore = () => playerScore = 0;
     const addPlayerMove = (num) => playerMoves.push(num);
-
+    return {playerName, playerMarker, resetMoves,getScore,addScore,resetScore,addPlayerMove}
 }
+
+const Game = ( () => {
+    let board = [null,null,null,null,null,null,null,null,null];
+    let player1Turn = true;
+
+
+});
