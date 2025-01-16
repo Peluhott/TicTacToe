@@ -27,8 +27,8 @@ function createPlayer2 (name){
 }
 
 const Game = ( () => {
-    player1 = new createPlayer1;
-    player2 = new createPlayer2
+    player1 = createPlayer1('javier');
+    player2 = createPlayer2('sedano');
     let board = [null,null,null,null,null,null,null,null,null];
     let player1Moves = []
     let player2Moves = []
@@ -49,6 +49,7 @@ const Game = ( () => {
         player1Moves.length = 0;
         player2Moves. length = 0;
         player1Turn = true;
+        board.fill(null);
     }
 
 
@@ -64,18 +65,20 @@ const Game = ( () => {
      const addMoveToPlayer = (player,index) => {
         if(player == 'player1'){
             player1Moves.push(index);
-            if(player1Moves.length == 3){
+            if(player1Moves.length >= 3){
                 if(checkForWin(player1WinningMoves,player1Moves)){
-                    player1.addScore;
+                    player1.addScore();
+                    resetGame();
                 }
             }
             filterWinningCombinations(index,player2Moves);
         }
         else {
             player2Moves.push(index);
-            if(player2Moves.length == 3){
+            if(player2Moves.length >= 3){
                 if(checkForWin(player2WinningMoves,player2Moves)){
-                    player2.addScore
+                    player2.addScore();
+                    resetGame();
                 }
             }
             filterWinningCombinations(index,player1Moves);
@@ -109,7 +112,7 @@ const Game = ( () => {
             }
             if(combination.every(cell => playerMoves.includes(cell))){
                 return true;
-                resetGame();
+                
             }
 
         }
