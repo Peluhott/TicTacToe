@@ -22,11 +22,17 @@ const placeMove = (index, player) => {  // places move on the board, adds to pla
         if(playerAlternator){
         board[index] = player1.marker;
         moves.x.push(index);
+        if(moves.x.length >= 3){
+            checkForWin(moves.x);
+        }
         playerAlternator = !playerAlternator;
 }
     else {
         board[index] = player2.marker;
         moves.o.push(index);
+        if(moves.o.length >= 3){
+            checkForWin(moves.o);
+        }
         playerAlternator = !playerAlternator;
     }
     }
