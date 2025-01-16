@@ -27,6 +27,8 @@ function createPlayer2 (name){
 }
 
 const Game = ( () => {
+    player1 = new createPlayer1;
+    player2 = new createPlayer2
     let board = [null,null,null,null,null,null,null,null,null];
     let player1Moves = []
     let player2Moves = []
@@ -62,15 +64,19 @@ const Game = ( () => {
      const addMoveToPlayer = (player,index) => {
         if(player == 'player1'){
             player1Moves.push(index);
-            if(player1Moves.length = 3){
-                checkForWin(player1WinningMoves,player1Moves)
+            if(player1Moves.length == 3){
+                if(checkForWin(player1WinningMoves,player1Moves)){
+                    player1.addScore;
+                }
             }
             filterWinningCombinations(index,player2Moves);
         }
         else {
             player2Moves.push(index);
-            if(player12Moves.length = 3){
-                checkForWin(player2WinningMoves,player2Moves)
+            if(player2Moves.length == 3){
+                if(checkForWin(player2WinningMoves,player2Moves)){
+                    player2.addScore
+                }
             }
             filterWinningCombinations(index,player1Moves);
         }
@@ -103,6 +109,7 @@ const Game = ( () => {
             }
             if(combination.every(cell => playerMoves.includes(cell))){
                 return true;
+                resetGame();
             }
 
         }
