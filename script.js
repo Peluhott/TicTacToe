@@ -66,3 +66,5 @@ const checkForWin = (arrayOfMoves) => {
 {return {placeMove, resetBoard, board}}
 }
 )();
+
+
