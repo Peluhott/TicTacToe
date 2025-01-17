@@ -1,0 +1,30 @@
+body {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.main-content {
+    display: grid;
+    grid-template-rows: 60px 60px 60px 60px 700px;
+    justify-content: center;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    border: solid 2px black;
+    gap: 4px;
+    max-height: 600px;
+}
+
+.gameSquare {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border: solid 2px black;
+}

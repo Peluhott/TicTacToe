@@ -6,7 +6,7 @@ function createPlayer(name, marker){
     const getScore = () => score;
     const addScore = () => score++;
 
-
+return {name, marker, getScore, addScore};
 }
 
 const gameBoard = (() => { 
@@ -63,5 +63,6 @@ const checkForWin = (arrayOfMoves) => {
 
     
 }
+{return {placeMove, resetBoard, board}}
 }
-);
+)();
