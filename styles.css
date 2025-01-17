@@ -1,31 +1,132 @@
-body {
-    display: grid;
-    grid-template-rows: 200px 1fr;
-    height: 100vh;
+/* Reset basic styles for consistent layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    min-height: 100vh;
+  }
+  
+  h1 {
     text-align: center;
-    
-}
-
-.main-content {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Header styling */
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Main game content styling */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Form container styling */
+  .form-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Scoreboard styling */
+  .score-board {
+    display: flex;
+    gap: 40px;
+    font-size: 1.5rem;
+  }
+  
+  /* Game board styling */
+  .gameBoard {
     display: grid;
-    grid-template-rows: 60px 60px 60px 60px 700px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+  }
+  
+  .gameSquare {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    display: flex;
     justify-content: center;
-}
-
-.gameBoard {
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px;
-    border: solid 2px black;
-    gap: 4px;
-    max-height: 600px;
-}
-
-.gameSquare {
-    background-color: white;
-    height: 200px;
-    width: 200px;
-    border: solid 2px black;
-}
-
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .gameSquare:hover {
+    background-color: #e9e9e9;
+  }
+  
+  .gameSquare img {
+    width: 80%;
+    height: 80%;
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 600px) {
+    .score-board {
+      flex-direction: column;
+    }
+  
+    .gameBoard {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+    }
+  
+    button {
+      width: 120px;
+      font-size: 0.9rem;
+    }
+  
+    input {
+      font-size: 0.9rem;
+    }
+  
+    .form-container {
+      flex-direction: column;
+    }
+  }
+  
