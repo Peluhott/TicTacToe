@@ -4,11 +4,14 @@ function createPlayer(name, marker){
     let score = 0;
 
     const getScore = () => score;
+    function resetScore() {
+      score = 0;
+    }
     function addScore() {
       score++;
     }
 
-return {name, marker, getScore, addScore};
+return {name, marker, getScore, addScore, resetScore};
 }
 
 const gameBoard = (() => { 
@@ -124,6 +127,9 @@ const handleSquareClick = (e) => {
 const resetGame = () => {
   gameBoard.resetBoard();
   renderBoard();
+  player1.resetScore();
+  player2.resetScore();
+  initializeScores();
 };
 
 // Start the game
