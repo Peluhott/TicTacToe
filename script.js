@@ -4,14 +4,15 @@ function createPlayer(name, marker){
     let score = 0;
 
     const getScore = () => score;
-    const addScore = () => score++;
+    function addScore() {
+      score++;
+    }
 
 return {name, marker, getScore, addScore};
 }
 
 const gameBoard = (() => { 
-    const player1 = createPlayer('javier', 'x');
-    const player2 = createPlayer('seda', 'o');
+    
 const board = [null,null,null,null,null,null,null,null,null]
 const moves = { x : [], o : []};
 let playerAlternator = true;
